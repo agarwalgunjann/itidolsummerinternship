@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone-Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="lead-preview">
+        <i class="fas fa-user"></i> Lead Preview
+      </div>
+      <div class="rightheader"> 
+        <button>See all Details ↗</button>
+        <div class="righthead">
+            <button class="left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+            <button class="right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="lead-info">
+        <div class="profile">
+          <img src="profilepic.jpg" alt="Profile Picture">
+          <div class="info">
+            <h3>Miss Sylvester Greenholt</h3>
+            <p><i class="fas fa-envelope"></i> <a href="" class="red">sylvester@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="actions">
+            <button>
+              <i class="fas fa-phone-alt"></i>
+            </button>
+            <button>
+              <i class="fas fa-comment"></i>
+            </button>
+            <button>
+              <i class="fas fa-envelope"></i>
+            </button>
+            <button>
+              <i class="fas fa-ellipsis-h"></i>
+            </button>
+          </div>
+      </div>
+
+      <div class="details">
+        <div class="detail">
+          <span class="green-grey"><strong>Lead Owner</strong></span>
+          <p>Aditya Patel</p>
+        </div>
+        <div class="detail">
+          <span class="green-grey"><strong>Company</strong></span>
+          <p class="red">Google</p>
+        </div>
+        <div class="detail">
+          <span class="green-grey"><strong>Lead Sources</strong></span>
+          <p>Adverstiment</p>
+        </div>
+        <div class="detail">
+          <span class="green-grey"><strong>Designation</strong></span>
+          <p>Full Stack Designer</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="section-header">
+          <h4>
+            <i class="fas fa-building"></i> Companies
+          </h4>
+          <div class="actions">
+            <button>
+              <i class="icon fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="section-header">
+          <h4>
+            <i class="fas fa-phone-alt"></i> Contacts
+          </h4>
+          <div class="actions">
+            <button>
+              <i class="icon active fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+    <div class="section-answer">
+        <div class="s-ans">
+            <h5>Contacts</h5>
+            <button class="red-btn">Create</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>POC Linkedin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="checkbox">
+                <input type="checkbox">
+              </td>
+              <td>
+                <div class="profile">
+                  <img src="https://via.placeholder.com/30" alt="Profile Picture">
+                  Joseph Lebsack
+                </div>
+                <p class="green-grey">Strategist</p>
+              </td>
+              <td>377-258-4858</td>
+              <td>Cyril.Tremblay@gma...</td>
+              <td>aditya-patel...</td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input type="checkbox">
+              </td>
+              <td>
+                <div class="profile">
+                  <img src="https://via.placeholder.com/30" alt="Profile Picture">
+                  Timothy Zieme
+                </div>
+                <p class="green-grey">Director</p>
+              </td>
+              <td>409-670-0749</td>
+              <td>Collin24@yahoo.com</td>
+              <td>aditya-patel...</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="section">
+        <div class="section-header">
+          <h4>
+            <i class="fas fa-clipboard-list"></i> Deals
+          </h4>
+          <div class="actions">
+            <button>
+              <i class="icon active fas fa-chevron-up"></i>
+            </button>
+          </div>
+        </div>
+        <div class="section-answer">
+            <div class="s-ans">
+                <h5>Contacts</h5>
+                <button class="red-btn">Create</button>
+            </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Stage</th>
+              <th>Close Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="checkbox">
+                <input type="checkbox">
+              </td>
+              <td>IT Idol Technologies</td>
+              <td>₹440.00</td>
+              <td class="stage">
+                <button class="new">New</button>
+              </td>
+              <td>05-03-2024</td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input type="checkbox">
+              </td>
+              <td>Bartell and Sons</td>
+              <td>₹503.00</td>
+              <td class="stage">
+                <button class="contacted">Contacted</button>
+              </td>
+              <td>05-03-2024</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>  <!--ends the content-->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //section-header     section-answer
+    const sections = document.querySelectorAll(".section");
+
+        sections.forEach(section => {
+            const icon = section.querySelector('.icon');
+            const answer = section.querySelector('.section-answer');
+
+            section.addEventListener('click', () => {
+                icon.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+  </script>
+</body>
+</html>
