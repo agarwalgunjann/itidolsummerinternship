@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2>Intern Detail</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+          
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+          
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth">
+          
+            <label for="datetime-local">Suitable Date and Time for Interview:</label>
+            <input type="datetime-local" id="datetime-local" name="datetime-local">
+          
+            <label for="month">Internship Month:</label>
+            <input type="month" id="month" name="month">
+          
+            <label for="number">Student ID:</label>
+            <input type="number" id="number" name="number">
+          
+            <label for="checkbox">Skills:</label>
+            <input type="checkbox" id="html" name="skills" value="HTML">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills" value="CSS">
+            <label for="css">CSS</label>
+            <input type="checkbox" id="javascript" name="skills" value="JavaScript">
+            <label for="javascript">JavaScript</label><br><br>
+
+            <label for="radio">Department:</label>
+            <input type="radio" id="it" name="department" value="IT">
+            <label for="it">IT</label>
+            <input type="radio" id="hr" name="department" value="HR">
+            <label for="hr">HR</label>
+            <input type="radio" id="finance" name="department" value="Finance">
+            <label for="finance">Finance</label><br><br>
+          
+            <label for="file">Resume:</label>
+            <input type="file" id="file" name="file"><br>
+          
+            <label for="textarea">Address:</label>
+            <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+          
+            <label for="select">Job Title:</label>
+            <select id="select" name="select">
+              <option value="Software Engineer">Software Engineer</option>
+              <option value="HR Manager">HR Manager</option>
+              <option value="Financial Analyst">Financial Analyst</option>
+            </select>
+
+            <input type="reset" id="reset" value="Reset">
+
+            <input type="submit" id="submit" value="Submit">
+          </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
