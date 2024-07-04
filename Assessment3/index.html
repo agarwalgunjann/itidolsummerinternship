@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            height:30vh;
+            background-color: rgb(0, 153, 255);
+        }
+    </style>
+</head>
+<body>
+    <p>Basic JavaScript</p>
+    <p style="height: fit-content; background-color: aliceblue;">Go to console</p>
+    <script>
+// 1. Declare variables of different data types and log all the variables
+let number1 = 10;             // Number
+let name = "Nisha Goel";     // String
+let is_Student = true;       // Boolean
+let grades = [85, 90, 92];   // Array
+let $tudent = {              // Object
+    name: "Gunjan",
+    age: 21,
+    grade: "A"
+};
+let nothing = null;          // Null
+let notDefined;              // Undefined
+
+console.log("Number:", number1);
+console.log("String:", name);
+console.log("Boolean:", is_Student);
+console.log("Array:", grades);
+console.log("Object:", $tudent);
+console.log("Null:", nothing);
+console.log("Undefined:", notDefined);
+
+
+// 2. Create an array of student objects with attributes (name, age, grade)
+let students = [
+    { name: "Muskan", age: 18, grade: "B" },
+    { name: "Divyean", age: 19, grade: "A" },
+    { name: "Chetan", age: 17, grade: "C" }
+];
+
+// Adding a new student to the array
+students.push({ name: "Milli", age: 20, grade: "B" });
+
+// Removing the last student from the array
+students.pop();
+
+// Updating a student's grade
+students[0].grade = "A";
+
+// Logging all student names
+students.forEach(student => console.log(student.name));
+students.map(student => console.log(student.name));      //using map method
+
+// Finding a student with grade 'A'
+let studentWithA = students.filter(student => student.grade === "A");
+console.log("Student with grade A:", studentWithA);
+
+
+// 3. Calculating the average age of students
+let totalAge = students.reduce((sum, student) => sum + student.age, 0);
+let averageAge = totalAge / students.length;
+console.log("Average Age:", averageAge);
+
+
+// 4. Create a simple calculator using the operator concept
+function calculator(a, b, operator) {
+    switch (operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        default:
+            return "Invalid operator";
+    }
+}
+
+let num1 = parseInt(prompt("Please Enter number 1"));
+let num2 = parseInt(prompt("Please Enter number 2"));
+
+console.log("Addition (" + num1 + " + " + num2 + "): " + calculator(num1, num2, '+'));
+console.log("Subtraction (" + num1 + " + " + num2 + "): " + calculator(num1, num2, '-'));
+console.log("Multiplication (" + num1 + " + " + num2 + "): " + calculator(num1, num2, '*'));
+console.log("Division (" + num1 + " + " + num2 + "): " + calculator(num1, num2, '/'));
+
+    </script>
+</body>
+</html>
