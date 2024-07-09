@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Form</title>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+
+  .profile-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .profile-form h2{
+    display: block;
+    margin-left: 85px;
+  }
+
+  .profile-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .profile-form input[type="text"],
+  .profile-form input[type="file"],
+  .profile-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .profile-image{
+    display: flex;
+    align-items: center;
+    border: 0.7px solid rgba(142, 142, 142, 0.5);
+    border-radius: 10px;
+    font-size: 12px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    color:rgb(61, 61, 61);
+    margin-bottom: 15px;
+  }
+
+  .select-pi{
+    border: 0.4px solid rgb(142, 142, 142);
+    padding: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .profile-form button {
+    background-color: #0470c9;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .profile-form button:hover{
+    background-color: #3a9ced;
+    cursor: pointer;
+  }
+
+  .profile-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 40vh;
+    overflow: scroll;
+  }
+
+  .profile-item {
+    border: 1px solid #323232;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 35%;
+  }
+
+  .profile-item h3 {
+    margin-top: 0;
+  }
+
+  .profile-item button{
+    background-color: red;
+    color: aliceblue;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 10px;
+  }
+
+  .profile-item img{
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  .middle-profile{
+    border-left: 1px solid black;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="profile-form">
+    <h2>Profile Info</h2>
+    <input type="text" id="name" name="name" placeholder="Name">
+
+    <input type="text" id="title" name="title" placeholder="Title">
+
+    <textarea id="description" name="description" placeholder="Description"></textarea>
+
+    <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+    <div class="profile-image">
+      <label for="image" class="select-pi">Select Profile Image</label>
+      <span id="file-chosen-text">No file chosen</span>
+    </div>
+
+    <button onclick="addProfile()">Add Profile</button>
+  </div>
+
+  <ul class="profile-list" id="profileList"></ul>
+
+  <script>
+    //Logic for input type file Select Profile Image
+    const fileInput = document.getElementById('image');
+    const fileChosenText = document.getElementById('file-chosen-text');
+  
+    fileInput.addEventListener('change', () => {
+      if (fileInput.value) {
+        fileChosenText.textContent = fileInput.value.match(/[^\\/]*$/)[0];
+      } else {
+        fileChosenText.textContent = 'No file chosen';
+      }
+    });
+
+    //Profile
+    let profiles = [];
+
+    function addProfile() {
+      const name = document.getElementById('name').value;
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const image = document.getElementById('image').files[0];
+
+      if (name && title && description) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          profiles.push({
+            name: name,
+            title: title,
+            description: description,
+            image: e.target.result
+          });
+          renderProfiles();
+          document.getElementById('name').value = '';
+          document.getElementById('title').value = '';
+          document.getElementById('description').value = '';
+          document.getElementById('image').value = '';
+          fileChosenText.textContent = 'No file chosen';
+        };
+        if (image) {
+          reader.readAsDataURL(image);
+        } else {
+          profiles.push({
+            name: name,
+            title: title,
+            description: description,
+            image: null
+          });
+          renderProfiles();
+          document.getElementById('name').value = '';
+          document.getElementById('title').value = '';
+          document.getElementById('description').value = '';
+          document.getElementById('image').value = '';
+          fileChosenText.textContent = 'No file chosen';
+        }
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+
+    function renderProfiles() {
+      const profileList = document.getElementById('profileList');
+      profileList.innerHTML = '';
+
+      profiles.forEach((profile, index) => {
+        const profileItem = document.createElement('li');
+        profileItem.classList.add('profile-item');
+        profileItem.innerHTML = `
+        ${profile.image ? `<img src="${profile.image}" alt="${profile.name}" width="100">` : ''}
+            <div class="middle-profile">
+          <h3>${profile.name}</h3>
+          <p>${profile.title}</p>
+          <p>${profile.description}</p>
+          </div>
+          <button onclick="deleteProfile(${index})">Delete</button>
+        `;
+        profileList.appendChild(profileItem);
+      });
+    }
+
+    function deleteProfile(index) {
+      profiles.splice(index, 1);
+      renderProfiles();
+    }
+  </script>
+</body>
+</html>
