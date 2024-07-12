@@ -1,0 +1,99 @@
+.middle-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.mid-b-l{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.mid-b-l input{
+    border: none;
+    font-size: 20px;
+    margin-left: 7px;
+}
+
+.mid-b-l input:focus{
+    outline: none;
+}
+
+.mid-b-r{
+    display: flex;
+    align-items: center;
+}
+
+.mid-b-r button{
+    margin: 5px;
+    padding: 4px 9px 2px 9px;
+    border-radius: 0.5em;
+    border: 0.3px solid black
+}
+
+.mid-b-r button > span{
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.lower-body{
+    padding:30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table .checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.table .checkbox input {
+  margin-right: 5px;
+}
+
+.table .profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.table .stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table .stage button {
+  background-color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table .stage button:hover {
+  background-color: #eee;
+}
