@@ -1,0 +1,177 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+  
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 550px;
+  width: 100%;
+  max-height: 85vh; 
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.4px solid black;
+  padding-bottom: 8px;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.modal-body {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.modal-body h4 {
+  padding: 10px 0;
+}
+
+.modal-body img{
+  width: 50px;
+  height: 50px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.personal-d {
+  display: flex;
+  align-items: center;
+}
+
+.personal-d input[type="file"]{
+  display: none;
+}
+
+.personal-d-le {
+  margin-right: 10px; 
+}
+
+.personal-d-ri h5 {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+}
+
+.personal-d-ri h6 {
+  margin: 5px 0;
+  font-size: 8px;
+  color: #666;
+}
+
+.personal-d-ri p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.personal-d-ri span {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #f00; 
+}
+
+.detail {
+  display:flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.detail-le, .detail-ri, .detail-full {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-le > label, .detail-ri > label, .detail-full > label {
+  font-size: 15px;
+  color: #555;
+  padding: 5px 0 10px 0;
+}
+
+.detail input {
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 10px;
+  width: 230px;
+  border-radius: 10px;
+}
+
+.detail-full input, textarea{
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 10px;
+  width: 96%;
+  border-radius: 10px;
+}
+
+select {
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.error{
+  font-size: 15px;
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
+}
+
+
+
+
+
+.modal-footer {
+  display: flex;
+  float: right;
+  padding: 10px 0 20px 0;
+}
+
+.modal-footer button{
+  margin: 0 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border: 0.4px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #c2c2c2;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #b30000;
+}
+
